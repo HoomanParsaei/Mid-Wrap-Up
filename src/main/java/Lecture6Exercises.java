@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Lecture6Exercises {
@@ -35,7 +36,7 @@ public class Lecture6Exercises {
      *   lecture 6 page 21
      */
     public double[][] matrixProduct(double[][] m1, double[][] m2) throws RuntimeException {
-        double[][] res = new double[m1[0].length][m2.length];
+        double[][] res = new double[m1.length][m2[0].length];
         if (m1[0].length != m2.length){
             throw new RuntimeException("Unable Product");
         }
@@ -88,6 +89,12 @@ public class Lecture6Exercises {
      *   lecture 6 page 30
      */
     public List<String> extractWord(String line) {
-        return null;
+        List<String> res = new LinkedList<>();
+        String[] temp = line.split("\\W+");
+        for(int i=0;i< temp.length;i++){
+            res.add(temp[i]);
+            System.out.println(temp[i]);
+        }
+        return res;
     }
 }

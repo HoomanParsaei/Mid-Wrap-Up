@@ -55,6 +55,16 @@ public class Lecture5Exercises {
      *   lecture 5 page 17
      */
     public boolean isFiboBin(int n) {
+        int prev = 0;
+        int next = 1;
+        while(next <= n) {
+            int third = prev + next;
+            if((n - next) == Integer.bitCount(third)){
+                return true;
+            }
+            prev = next;
+            next = third;
+        }
         return false;
     }
 }
